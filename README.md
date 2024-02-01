@@ -2,7 +2,7 @@
 
 This PowerBI project involves the analysis of sales data collected from Kaggle. The dataset has undergone thorough data cleaning and preprocessing to ensure the quality and relevance of the insights derived. Below are the steps taken for data cleaning and the subsequent measures and columns created for analysis.
 
-Data Cleaning and Preprocessing
+**Data Cleaning and Preprocessing**
 
 The collected sales datasets from Kaggle underwent the following cleaning and preprocessing steps:
 
@@ -17,7 +17,7 @@ Handling Missing Values: Checked and addressed any missing values in the dataset
 Data Transformation: Transformed data to ensure consistency and adherence to analytical requirements.
 
 
-Measures
+**Measures:**
 
 Net Income Measure:
 
@@ -34,12 +34,18 @@ Online Customers:
     VAR Online = CALCULATE(COUNT('World Sales Dataset'[SalesChannel]), 'World Sales Dataset'[SalesChannel] = "Online")
 Return Online
 
+
 Total Revenue:
 
     CALCULATE(SUMX('World Sales Dataset', 'World Sales Dataset'[Revenue]), GROUPBY('World Sales Dataset', 'World Sales Dataset'[Country]))
+    
+
+![Visualization 1](Total-revenue.PNG) 
 
 
-Columns
+
+
+**Columns:**
 
 Quarters:
 
@@ -79,6 +85,16 @@ Total_profit:
 
 Year(Half):
 
-    SWITCH('World Sales Dataset'[Month_ID], 1, "First Half", 2, "First Half", ..., 12, "Second Half", "")
+    SWITCH('World Sales Dataset'[Month_ID], 1, "First Half", 2, "First Half", ..., 12, "Second Half", "")      
+
+    
+
+
+
+   ![Visualization 2](yearly-analysis.PNG) 
+
+    
+
+
 
 
